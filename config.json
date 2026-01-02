@@ -2,7 +2,7 @@
   "inbounds": [
     {
       "port": 8080,
-      "protocol": "vless",
+      "protocol": "vmess",
       "settings": {
         "clients": [
           {
@@ -15,7 +15,7 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/TG-@Not_Ragnar"
+          "path": "/MR_VPN_Mubarak"
         }
       }
     }

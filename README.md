@@ -30,11 +30,11 @@ This project allows you to deploy a **VLESS proxy** server over **WebSocket** us
   "inbounds": [
     {
       "port": 8080,
-      "protocol": "vless",
+      "protocol": "trojan",
       "settings": {
         "clients": [
           {
-            "id": "a3b7de87-b46f-4dcf-b6ed-5bf5ebe83167",
+            "password": "Trojan-2026",
             "level": 0
           }
         ],
@@ -43,7 +43,7 @@ This project allows you to deploy a **VLESS proxy** server over **WebSocket** us
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/t.me/ragnarservers"
+          "path": "/"
         }
       }
     }
@@ -56,7 +56,7 @@ This project allows you to deploy a **VLESS proxy** server over **WebSocket** us
 }
 ````
 
-> 🔐 Replace the UUID with your own for security.
+> 🔐 Replace the PASSWORD with your own for security.
 
 ---
 
@@ -65,20 +65,20 @@ This project allows you to deploy a **VLESS proxy** server over **WebSocket** us
 ### Step 1: Build Docker Image
 
 ```bash
-docker build -t gcr.io/YOUR_PROJECT_ID/vless-ws .
+docker build -t gcr.io/YOUR_PROJECT_PASSWORS/trojan-ws .
 ```
 
 ### Step 2: Push to Container Registry
 
 ```bash
-docker push gcr.io/YOUR_PROJECT_ID/vless-ws
+docker push gcr.io/YOUR_PROJECT_PASSWORD/trojan-ws
 ```
 
 ### Step 3: Deploy to Google Cloud Run
 
 ```bash
-gcloud run deploy vless-ws \
-  --image gcr.io/YOUR_PROJECT_ID/vless-ws \
+gcloud run deploy trojan-ws \
+  --image gcr.io/YOUR_PROJECT_PASSWORD/trojan-ws \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated \
@@ -107,14 +107,14 @@ Use the following settings in your client app:
 
 | Setting    | Value                                  |
 | ---------- | -------------------------------------- |
-| Protocol   | VLESS                                  |
-| Address    | `your.domain.com`                      |
+| Protocol   | TROJAN                                 |
+| Address    | TROJAN                                 |
 | Port       | `443` (HTTPS)                          |
 | UUID       | `a3b7de87-b46f-4dcf-b6ed-5bf5ebe83167` |
-| Encryption | none                                   |
+| PASSWORD   | `Trojan-2026`                          |
 | Transport  | WebSocket (WS)                         |
 | WS Path    | `/notragnar`                           |
-| TLS        | Yes (via Google CDN)                   |
+| TLS        | `\`                                    |
 
 ---
 

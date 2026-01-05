@@ -65,7 +65,7 @@ This project allows you to deploy a **VLESS proxy** server over **WebSocket** us
 ### Step 1: Build Docker Image
 
 ```bash
-docker build -t gcr.io/YOUR_PROJECT_PASSWORS/trojan-ws .
+docker build -t gcr.io/YOUR_PROJECT_PASSWORD/trojan-ws .
 ```
 
 ### Step 2: Push to Container Registry
